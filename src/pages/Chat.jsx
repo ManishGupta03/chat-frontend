@@ -27,7 +27,7 @@ export default function Chat() {
     }
   };
   fetchUp();
-}, []);
+}, [navigate]);
   useEffect(() => {
     if (currentUser) {
       socket.current = io(host);
@@ -52,7 +52,7 @@ export default function Chat() {
     };
 
     fetchContacts();
-  }, [currentUser]);
+  }, [currentUser,navigate]);
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
   };
